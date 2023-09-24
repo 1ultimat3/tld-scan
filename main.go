@@ -13,6 +13,7 @@ import (
 
 
 func worker(domains chan string, wg *sync.WaitGroup) {
+	//worker code
 	for fqdm := range domains {
 		fqdm_with_port := fmt.Sprintf("%s:%d", fqdm, 80)
 		conn, err := net.Dial("tcp", fqdm_with_port)
